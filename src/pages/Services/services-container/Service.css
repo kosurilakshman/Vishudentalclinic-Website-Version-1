@@ -1,0 +1,228 @@
+:root {
+    --primary-font: 'Poppins', sans-serif;
+    --secondary-font: "Cabin", sans-serif;
+    --footerbg-color: #142F43;
+    --btn-color: linear-gradient(45deg, #0000FF, #1E90FF);
+    --btn-hover-color: #142F43;
+    --primary-text-color: #fff;
+    --secondary-text-color: #f7f7f7;
+    --section-padding: 2.5rem 1.25rem; /* 50px 20px */
+    --section-gap: 2.25rem; /* 20px */
+    --heading-size: 3.5rem;
+    --subheading-size: 1.5rem;
+    --paragraph-size: 1.1rem;
+  }
+
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+}
+
+.service-boxes-heading {
+    font-size: 2.5rem;
+    font-family: var(--primary-font);
+    margin-bottom: 8px;
+}
+
+.services-boxes-para {
+    font-size: 1.75rem;
+    font-family: var(--secondary-font);
+    font-weight: lighter;
+    text-align: justify;
+    line-height: 24px;
+}
+
+.service-boxes {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 60px 135px;
+    gap: 50px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.service-box-1,
+.service-box-2,
+.service-box-3,
+.service-box-4,
+.service-box-5,
+.service-box-6 {
+    position: relative;
+    display: flex;
+    gap: 40px;
+    opacity: 0;
+    transform: translateX(300px); /* Default starting position for animation */
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Smooth transition */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    padding: 16px 36px;
+    border-radius: 18px;
+}
+.service-box-content
+{
+    margin-top: 32px;
+}
+
+.service-img {
+    height: 247px;
+    width: 410px;
+    border-radius: 18px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.service-box-subheading {
+    font-size: 1.5rem;
+    font-family: var(--secondary-font);
+    margin-bottom: 14px;
+    border-bottom: 1px solid #000;
+}
+
+.service-box-para {
+    font-size: 1.15rem;
+    font-family: var(--secondary-font);
+    font-weight: lighter;
+    text-align: justify;
+    margin-top: 12px;
+    font-weight: 300;
+}
+
+/* mobile screens */
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .services-container {
+      margin: 24px;
+    }
+    .service-boxes {
+      margin: 20px -8px;
+      overflow-x: hidden;
+    }
+    .service-boxes-heading {
+      font-size: 38px;
+      font-weight: 600;
+      margin: 8px 0;
+    }
+    .services-boxes-para {
+      font-size: 20px;
+      text-align: center;
+    }
+    .service-box-1,
+    .service-box-2,
+    .service-box-3,
+    .service-box-4,
+    .service-box-5,
+    .service-box-6 {
+      flex-direction: column;
+      padding: 18px 42px;
+      margin-bottom: 20px;
+      width: 95%;
+    }
+  
+    .service-img {
+      width: 100%;
+    }
+    .service-box-content {
+      margin-top: -26px;
+    }
+  }
+  
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .service-boxes-heading {
+      font-size: 34px;
+      margin: 0;
+      font-weight: 600;
+    }
+    .services-boxes-para {
+      font-size: 22px;
+      text-align: center;
+    }
+    .service-boxes {
+      overflow-x: hidden;
+      margin: 36px 0;
+    }
+    .service-box-1,
+    .service-box-2,
+    .service-box-3,
+    .service-box-4,
+    .service-box-5,
+    .service-box-6 {
+      flex-direction: column;
+      width: 80%;
+      padding: 24px 36px;
+      margin-bottom: 20px;
+    }
+    .service-img {
+      height: 340px;
+      width: 100%;
+    }
+    .service-box-content {
+      margin-top: -28px;
+    }
+    .service-box-para {
+      font-size: 18px;
+    }
+  }
+  
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .service-boxes-heading {
+      font-size: 32px;
+    }
+    .services-boxes-para {
+      font-size: 24px;
+    }
+    .service-boxes {
+      grid-template-columns: repeat(2, 1fr);
+      overflow-x: hidden;
+      margin: 20px 0;
+      padding: 4px;
+      gap: 24px;
+    }
+    .service-box-1,
+    .service-box-2,
+    .service-box-3,
+    .service-box-4,
+    .service-box-5,
+    .service-box-6 {
+      flex-direction: column;
+      height: 580px;
+    }
+    .service-box-content {
+      margin-top: -22px;
+    }
+  
+    .service-img {
+      height: 247px;
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .service-boxes {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 50px 0;
+      padding: 0 24px;
+      gap: 10px 38px;
+      overflow: hidden;
+    }
+    .service-box-1,
+    .service-box-2,
+    .service-box-3,
+    .service-box-4,
+    .service-box-5,
+    .service-box-6 {
+      flex-direction: column;
+      overflow: hidden;
+      height: 610px;
+      margin-bottom: 40px;
+    }
+    .service-box-content {
+      margin-top: -11px;
+    }
+    .service-img{
+      height: 299px;
+      width: 100%;
+    }
+  }

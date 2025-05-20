@@ -1,0 +1,44 @@
+# Enable URL Rewriting
+RewriteEngine On
+
+# Redirect non-www to www
+RewriteCond %{HTTP_HOST} ^samplewebsites.in [NC]
+RewriteRule ^(.*)$ https://www.samplewebsites.in/$1 [L,R=301]
+
+# Force HTTPS (secure connection)
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+# Redirect all requests to index.html for Single Page Application routing
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+
+
+
+# Block access to .htaccess itself
+<Files .htaccess>
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+# Cache Control for images, CSS, and JavaScript files
+<FilesMatch "\.(jpg|jpeg|png|gif|css|js)$">
+  Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# Redirect old pages (example)
+# RewriteRule ^oldpage.html$ /newpage.html [R=301,L]
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files and directories
+<FilesMatch "^(config|password|private|secret)">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
